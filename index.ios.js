@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, AppRegistry } from 'react-native';
 import DayItem from './src/day-item';
 
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 class Weekdays extends Component {
   render(){
@@ -10,8 +10,12 @@ class Weekdays extends Component {
       <Text>
         Days of Week
       </Text>
-      <DayItem day={days[1]}/>
+      { this.renderDays() }
     </View>
+  }
+
+  renderDays(){
+    return DAYS.map((day) => <DayItem day={day}/> )
   }
 }
 
