@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, AppRegistry } from 'react-native';
+import DayItem from './src/day-item';
 
+// const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 class Weekdays extends Component {
   render(){
@@ -8,6 +10,7 @@ class Weekdays extends Component {
       <Text>
         Days of Week
       </Text>
+      <DayItem />
     </View>
   }
 }
