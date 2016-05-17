@@ -4,7 +4,7 @@ import { Text, StyleSheet } from 'react-native';
 export default class DayItem extends Component {
   render(){
   	return <Text style={style.day}>
-  	  Sunday
+  	  {this.props.day}
   	</Text>
   }
 }
