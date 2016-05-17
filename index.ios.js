@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, AppRegistry } from 'react-native';
+import Moment from 'moment';
 import DayItem from './src/day-item';
-
-const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 class Weekdays extends Component {
   render(){
@@ -15,8 +14,17 @@ class Weekdays extends Component {
   }
 
   renderDays(){
-    return DAYS.map((day) => <DayItem day={day}/> )
+    let dayItems = [];
+
+    for(let i = 0; i < 7; i++){
+      let day = Moment().add(i, 'days').format('dddd');
+      dayItems.push(
+        <DayItem day={day} daysUntil={i} />
+      )
+    }
+    return dayItems
   }
+
 }
 
 const style = StyleSheet.create({
