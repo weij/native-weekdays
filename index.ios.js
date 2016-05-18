@@ -3,17 +3,19 @@ import { View, Text, StyleSheet, AppRegistry } from 'react-native';
 import Moment from 'moment';
 import DayItem from './src/day-item';
 
+
+// Create a component called Weekdays
 class Weekdays extends Component {
   render(){
     return <View style={style.container}>
       <Text>
         Days of Week
       </Text>
-      { this.renderDays() }
+      { this._renderDays() }
     </View>
   }
 
-  renderDays(){
+  _renderDays(){
     let dayItems = [];
 
     for(let i = 0; i < 7; i++){
@@ -27,6 +29,7 @@ class Weekdays extends Component {
 
 }
 
+// styling Weekdays component
 const style = StyleSheet.create({
   container: {
     flex: 1,
@@ -35,5 +38,6 @@ const style = StyleSheet.create({
   }
 });
 
+// show this component on the screen
 AppRegistry.registerComponent('weekdays', () => Weekdays);
 

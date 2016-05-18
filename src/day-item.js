@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-export default class DayItem extends Component {
+// crreate a component called DayItem
+class DayItem extends Component {
   render(){
   	return <Text style={this._style()}>
   	  {this.props.day}
   	</Text>
   }
 
+  // a styling function that returns an object, which in turn calls other helper functions
   _style(){
   	return {
   	  color: this._color(),
@@ -35,5 +37,8 @@ export default class DayItem extends Component {
     return 70 - 4 * this.props.daysUntil;
   }
 }
+
+// export the component and make ready for use
+export default DayItem;
 
 
