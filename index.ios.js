@@ -19,7 +19,7 @@ class Weekdays extends Component {
     for(let i = 0; i < 7; i++){
       let day = Moment().add(i, 'days').format('dddd');
       dayItems.push(
-        <DayItem day={day} daysUntil={i} />
+        <DayItem key={i} day={day} daysUntil={i} />
       )
     }
     return dayItems
